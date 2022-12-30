@@ -303,11 +303,11 @@ if tP or stopCondition
     sellPrice := na 
 
 // alerts
-var string enterMessage = '{ "content" : "ENTER SHORT: '+ syminfo.basecurrency +' $'+ str.tostring(syminfo.mintick)+' $'+ str.tostring(syminfo.pointvalue)+' $'+ str.tostring(syminfo.ticker)+' $' + str.tostring(close)+'"}'
-var string exitMessage = '{ "content" : "EXIT SHORT: '+ syminfo.basecurrency +' = $'+ str.tostring(close)+'"}'
-var string stopMessage = '{ "content" : "STOP LOSS HIT: '+ syminfo.basecurrency +' = $'+ str.tostring(close)+'"}'
+enterMessage = '{ "content" : "ENTER long position: '+ syminfo.basecurrency +' = $'+ str.tostring(close)+'"}'
+exitMessage = '{ "content" : "EXIT long position: '+ syminfo.basecurrency +' = $'+ str.tostring(close)+'"}'
+stopMessage = '{ "content" : "STOP LOSS HIT: '+ syminfo.basecurrency +' = $'+ str.tostring(close)+'"}'
 
-if short
+if long
     alert(enterMessage, alert.freq_once_per_bar_close)
 
 if tP
